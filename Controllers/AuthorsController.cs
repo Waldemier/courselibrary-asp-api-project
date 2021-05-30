@@ -1,5 +1,8 @@
 ﻿using System;
-using System.Linq;
+using System.Collections.Generic;
+using AutoMapper;
+using CourseLibrary.API.Models;
+using CourseLibrary.API.ResourseParameters;
 using CourseLibrary.API.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,32 +13,39 @@ namespace CourseLibrary.API.Controllers
     public class AuthorsController : ControllerBase // have use for api`s. Without view support.
     {
         private readonly ICourseLibraryRepository _repos;
-
-        public AuthorsController(ICourseLibraryRepository repos)
+        private readonly IMapper _mapper;
+        public AuthorsController(ICourseLibraryRepository repos, IMapper mapper)
         {
             this._repos = repos ?? throw new ArgumentNullException(nameof(repos));
+            this._mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         // GET
+        //If method are first after constructor, then it will called, when we send request to default route template
         //[HttpGet("api/authors")] if we declared the route(controller) with the same link, we do not need to declare link for the action.
-        [HttpGet()]
-        public IActionResult GetAuthors()
+        [HttpGet()] //Can be implemented without "()"
+        [HttpHead]
+        public IActionResult GetAuthors([FromQuery] AuthorsResourseParameters authorsResourseParameters) // Must implement "From" annotation, because class it`s a complex parameter 
         {
-            var authors = this._repos.GetAuthors();
-            return Ok(authors); // we can use 'new JsonResult(authors);' but will be returned a default Ok status code.
+            /*
+             *  https://localhost:5001/api/authors?maincategory=singing&SearchQuery=arnold or https://localhost:5001/api/authors
+             */
+            
+            var authors = this._repos.GetAuthors(authorsResourseParameters); 
+            var authorDtos = this._mapper.Map<IEnumerable<AuthorDto>>(authors);
+            return Ok(authorDtos); // we can use 'new JsonResult(authors);' but will be returned a default Ok status code.
         }
 
-        [HttpGet("{authorId:Guid}")] // template: api/authors/{authorId} (slash adding automatically)
+        [HttpGet("{authorId:Guid}", Name = "GetAuthor")] // template: api/authors/{authorId} (slash adding automatically)
         public IActionResult GetAuthor(Guid authorId)
         {
             var author = this._repos.GetAuthor(authorId);
-
             if (author == null)
             {
                 return NotFound(); // 404 status code will be returned
             }
-            
-            return Ok(author);
+            var authorDto = this._mapper.Map<AuthorDto>(author);
+            return Ok(authorDto);
         }
     }
 }

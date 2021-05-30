@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CourseLibrary.API.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -33,7 +34,11 @@ namespace CourseLibrary.API
                 // By default is false
                 setupAction.ReturnHttpNotAcceptable = true; // Adding supported the 406 http status if requested 'Accept' type unsupported or not indicated.
             }).AddXmlDataContractSerializerFormatters(); // Adding support the xml format.
-            
+
+            //Повернення:
+            //Масив збірок у цьому домені програми.
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); //Аргумент дає додаткові переваги при скануванні проекту на знаходження Профілів
+
             services.AddScoped<ICourseLibraryRepository, CourseLibraryRepository>();
 
             services.AddDbContext<CourseLibraryDbContext>(options => 
@@ -55,6 +60,18 @@ namespace CourseLibrary.API
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "CourseLibrary.API v1"));
+            }
+            else
+            {
+                // Error handler for production mode.
+                app.UseExceptionHandler(appBuilder =>
+                {
+                    appBuilder.Run(async context =>
+                    {
+                        context.Response.StatusCode = 500;
+                        await context.Response.WriteAsync("An unexpected fault happened. Try again latest.");
+                    });
+                });
             }
 
             app.UseHttpsRedirection();

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using CourseLibrary.API.Entities;
 using System.Linq;
+using CourseLibrary.API.ResourseParameters;
 
 namespace CourseLibrary.API.Services
 {
@@ -132,6 +133,38 @@ namespace CourseLibrary.API.Services
                 .ToList();
         }
 
+        //Search
+        public IEnumerable<Author> GetAuthors(AuthorsResourseParameters authorsResourseParameters)
+        {
+            if (authorsResourseParameters == null)
+            {
+                throw new ArgumentNullException(nameof(authorsResourseParameters));
+            }
+
+            if (string.IsNullOrWhiteSpace(authorsResourseParameters.MainCategory)
+                && string.IsNullOrWhiteSpace(authorsResourseParameters.SearchQuery))
+            {
+                return GetAuthors();
+            }
+
+            var collection = _context.Authors as IQueryable<Author>;
+
+            if(!string.IsNullOrWhiteSpace(authorsResourseParameters.MainCategory))
+            {
+                var mainCategory = authorsResourseParameters.MainCategory.Trim();
+                collection = collection.Where(a => a.MainCategory == mainCategory);
+            }
+
+            if (!string.IsNullOrWhiteSpace(authorsResourseParameters.SearchQuery))
+            {
+                var searchQuery = authorsResourseParameters.SearchQuery.Trim();
+                collection = collection.Where(a => a.MainCategory.Contains(searchQuery) 
+                                                   || a.FirstName.Contains(searchQuery) 
+                                                   || a.LastName.Contains(searchQuery));
+            }
+            return collection.ToList();
+        }
+        
         public void UpdateAuthor(Author author)
         {
             // no code in this implementation
