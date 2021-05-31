@@ -7,6 +7,7 @@ namespace CourseLibrary.API.Profiles
     {
         public AuthorProfile()
         {
+            //From / To
             CreateMap<Entities.Author, Models.AuthorDto>()
                 .ForMember(
                     dest => dest.Name,
@@ -15,6 +16,7 @@ namespace CourseLibrary.API.Profiles
                     dest => dest.Age,
                     opt => opt.MapFrom(src => src.DateOfBirthday.GetCurrentAge())
                 );
+            CreateMap<Models.AuthorForCreateDto, Entities.Author>();
         }        
     }
 }

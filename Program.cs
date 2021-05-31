@@ -23,11 +23,10 @@ namespace CourseLibrary.API
                 try
                 {
                     var context = scope.ServiceProvider.GetService<CourseLibraryDbContext>();
-                    // for demo purposes, delete the database and migrate on startup so
-                    // we can start with a clean slate. 
-                    context.Database.EnsureDeleted(); //true if the database is deleted, false if it did not exist.
-                    // Applies any pending migrations for the context to the database. Will create the database if it does not already exist.
-                    context.Database.Migrate(); // Analogue of update-database (+ inserts seed data from Context)
+                    // DELETE EXIST DATABASE
+                    context.Database.EnsureDeleted(); 
+                    // MIGRATE CURRENT MIGRATION INTO DB + SEED DATA From Context
+                    context.Database.Migrate();
                 }
                 catch (Exception ex)
                 {

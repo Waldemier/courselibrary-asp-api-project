@@ -2,18 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1f10379-bc92-46ce-a0f0-41b8ebcf5bb4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/CoursesController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Helpers/DateTimeOffsetExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/AuthorDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/CourseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profiles/AuthorProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Profiles/CourseProfile.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ResourseParameters/AuthorsResourseParameters.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controllers/AuthorCollectionsController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Helpers/ArrayModelBinder.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/AuthorForCreateDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Models/CourseForCreateDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/AuthorsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthorsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CourseLibrary.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/CourseLibrary.API.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/CoursesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CoursesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Author.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/AuthorDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/AuthorDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profiles/AuthorProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Profiles/AuthorProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Profiles/CourseProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Profiles/CourseProfile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/CourseLibraryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/CourseLibraryRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/ICourseLibraryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/ICourseLibraryRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,40 +35,34 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_asp-dot-net-core-3-restful-api-building (1).zip/06/demos/start/CourseLibrary/CourseLibrary.API/ResourceParameters/AuthorsResourceParameters.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_asp-dot-net-core-3-restful-api-building (1).zip/05/demos/start/CourseLibrary/CourseLibrary.API/Helpers/DateTimeOffsetExtensions.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_asp-dot-net-core-3-restful-api-building (1).zip/05/demos/start/CourseLibrary/CourseLibrary.API/Models/AuthorDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_asp-dot-net-core-3-restful-api-building (1).zip/06/demos/end/CourseLibrary/CourseLibrary.API/Services/CourseLibraryRepository.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_asp-dot-net-core-3-restful-api-building (1).zip/05/demos/start/CourseLibrary/CourseLibrary.API/Profiles/AuthorsProfile.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_asp-dot-net-core-3-restful-api-building (1).zip/05/demos/start/CourseLibrary/CourseLibrary.API/Controllers/CoursesController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_asp-dot-net-core-3-restful-api-building (1).zip/06/demos/end/CourseLibrary/CourseLibrary.API/Controllers/AuthorsController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_asp-dot-net-core-3-restful-api-building (1).zip/05/demos/start/CourseLibrary/CourseLibrary.API/Models/CourseDto.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/AppData/Local/Temp/Temp1_asp-dot-net-core-3-restful-api-building (1).zip/06/demos/end/CourseLibrary/CourseLibrary.API/Controllers/CoursesController.cs" root0="SKIP_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/DbContext/DbContext.cs" />
       <option value="$PROJECT_DIR$/DbContext/Context.cs" />
       <option value="$PROJECT_DIR$/Entities/Сщгкыуюсы.cs" />
-      <option value="$PROJECT_DIR$/Entities/Author.cs" />
       <option value="$PROJECT_DIR$/Entities/Course.cs" />
       <option value="$PROJECT_DIR$/DbContext/CourseLibraryDbContext.cs" />
-      <option value="$PROJECT_DIR$/Program.cs" />
       <option value="$PROJECT_DIR$/Controllers/Courses.cs" />
-      <option value="$PROJECT_DIR$/Startup.cs" />
-      <option value="$PROJECT_DIR$/Models/AuthorDto.cs" />
       <option value="$PROJECT_DIR$/Helpers/HelperFunctions.cs" />
       <option value="$PROJECT_DIR$/Helpers/DateTimeOffsetExtensions.cs" />
-      <option value="$PROJECT_DIR$/Profiles/AuthorProfile.cs" />
-      <option value="$PROJECT_DIR$/Profiles/CourseProfile.cs" />
       <option value="$PROJECT_DIR$/Controllers/CourseController.cs" />
       <option value="$PROJECT_DIR$/Models/CourseDto.cs" />
-      <option value="$PROJECT_DIR$/Controllers/CoursesController.cs" />
       <option value="$PROJECT_DIR$/ResourseParameters/AuthorsResourseParameters.cs" />
       <option value="$PROJECT_DIR$/Services/ICourseLibraryRepository.cs" />
       <option value="$PROJECT_DIR$/Services/CourseLibraryRepository.cs" />
+      <option value="$PROJECT_DIR$/Profiles/AuthorProfile.cs" />
+      <option value="$PROJECT_DIR$/Models/CourseForCreateDto.cs" />
+      <option value="$PROJECT_DIR$/Profiles/CourseProfile.cs" />
+      <option value="$PROJECT_DIR$/Startup.cs" />
+      <option value="$PROJECT_DIR$/Program.cs" />
+      <option value="$PROJECT_DIR$/Controllers/CoursesController.cs" />
+      <option value="$PROJECT_DIR$/Controllers/AuthorsCollectionsController.cs" />
+      <option value="$PROJECT_DIR$/Models/AuthorDto.cs" />
+      <option value="$PROJECT_DIR$/Models/AuthorForCreateDto.cs" />
+      <option value="$PROJECT_DIR$/Entities/Author.cs" />
       <option value="$PROJECT_DIR$/Controllers/AuthorsController.cs" />
+      <option value="$PROJECT_DIR$/Helpers/ArrayModelBinder.cs" />
+      <option value="$PROJECT_DIR$/Controllers/AuthorCollectionsController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sTVyB83lmFBA3MRwoAOt3vgtTF" />
@@ -139,7 +136,9 @@
       <workItem from="1621005503056" duration="5951000" />
       <workItem from="1621050208329" duration="156000" />
       <workItem from="1621051879647" duration="258000" />
-      <workItem from="1622363954445" duration="15175000" />
+      <workItem from="1622363954445" duration="16108000" />
+      <workItem from="1622421853781" duration="9475000" />
+      <workItem from="1622456178723" duration="6532000" />
     </task>
     <servers />
   </component>
@@ -167,45 +166,76 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Program.cs</url>
-          <line>29</line>
-          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Program.cs" initialLine="29" containingFunctionPresentation="method 'Main'">
+          <url>file://$PROJECT_DIR$/Controllers/AuthorsController.cs</url>
+          <line>56</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorsController.cs" initialLine="57" containingFunctionPresentation="method 'CreateAuthor'">
             <startOffsets>
-              <option value="1232" />
+              <option value="2801" />
             </startOffsets>
             <endOffsets>
-              <option value="1325" />
+              <option value="2862" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Program.cs</url>
-          <line>27</line>
-          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Program.cs" initialLine="27" containingFunctionPresentation="method 'Main'">
-            <startOffsets>
-              <option value="974" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1069" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="2" />
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Controllers/AuthorsController.cs</url>
-          <line>33</line>
-          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorsController.cs" initialLine="31" containingFunctionPresentation="method 'GetAuthors'">
+          <line>42</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorsController.cs" initialLine="43" containingFunctionPresentation="method 'GetAuthor'">
             <startOffsets>
-              <option value="1625" />
+              <option value="2151" />
             </startOffsets>
             <endOffsets>
-              <option value="1689" />
+              <option value="2202" />
             </endOffsets>
           </properties>
-          <option name="timeStamp" value="3" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/AuthorsController.cs</url>
+          <line>43</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorsController.cs" initialLine="44" containingFunctionPresentation="method 'GetAuthor'">
+            <startOffsets>
+              <option value="2215" />
+            </startOffsets>
+            <endOffsets>
+              <option value="2240" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/AuthorCollectionsController.cs</url>
+          <line>49</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorCollectionsController.cs" initialLine="26" containingFunctionPresentation="method 'CreateAuthorCollection'">
+            <startOffsets>
+              <option value="1635" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1712" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/AuthorsController.cs</url>
+          <line>63</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorsController.cs" initialLine="64" containingFunctionPresentation="method 'CreateAuthor'">
+            <startOffsets>
+              <option value="3067" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3146" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="11" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#CourseLibrary.API.Entities.Author" memberName="Courses" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

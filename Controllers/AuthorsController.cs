@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AutoMapper;
+using CourseLibrary.API.Entities;
 using CourseLibrary.API.Models;
 using CourseLibrary.API.ResourseParameters;
 using CourseLibrary.API.Services;
@@ -31,21 +32,36 @@ namespace CourseLibrary.API.Controllers
              *  https://localhost:5001/api/authors?maincategory=singing&SearchQuery=arnold or https://localhost:5001/api/authors
              */
             
-            var authors = this._repos.GetAuthors(authorsResourseParameters); 
-            var authorDtos = this._mapper.Map<IEnumerable<AuthorDto>>(authors);
+            var authorEntities = this._repos.GetAuthors(authorsResourseParameters); 
+            var authorDtos = this._mapper.Map<IEnumerable<AuthorDto>>(authorEntities);
             return Ok(authorDtos); // we can use 'new JsonResult(authors);' but will be returned a default Ok status code.
         }
 
         [HttpGet("{authorId:Guid}", Name = "GetAuthor")] // template: api/authors/{authorId} (slash adding automatically)
         public IActionResult GetAuthor(Guid authorId)
         {
-            var author = this._repos.GetAuthor(authorId);
-            if (author == null)
+            var authorEntity = this._repos.GetAuthor(authorId);
+            if (authorEntity == null)
             {
                 return NotFound(); // 404 status code will be returned
             }
-            var authorDto = this._mapper.Map<AuthorDto>(author);
+            var authorDto = this._mapper.Map<AuthorDto>(authorEntity);
             return Ok(authorDto);
+        }
+        
+        // set accept and content-type to the request headers
+        [HttpPost]
+        public ActionResult<AuthorDto> CreateAuthor(AuthorForCreateDto authorCreateDto) // [ApiController] themself to deserializes json
+        {
+            // we dont need to check if argument is null, because [ApiController] do this for us
+            var authorEntity = this._mapper.Map<Author>(authorCreateDto);
+            this._repos.AddAuthor(authorEntity);
+            this._repos.Save();
+
+            var authorDto = this._mapper.Map<AuthorDto>(authorEntity);
+            
+            // Status 201
+            return CreatedAtRoute("GetAuthor", new { authorId = authorDto.Id }, authorDto);
         }
     }
 }
