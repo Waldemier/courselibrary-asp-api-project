@@ -25,7 +25,7 @@ namespace CourseLibrary.API.Controllers
         //If method are first after constructor, then it will called, when we send request to default route template
         //[HttpGet("api/authors")] if we declared the route(controller) with the same link, we do not need to declare link for the action.
         [HttpGet()] //Can be implemented without "()"
-        [HttpHead]
+        [HttpHead] // Response only headers with any information
         public IActionResult GetAuthors([FromQuery] AuthorsResourseParameters authorsResourseParameters) // Must implement "From" annotation, because class it`s a complex parameter 
         {
             /*
@@ -62,6 +62,16 @@ namespace CourseLibrary.API.Controllers
             
             // Status 201
             return CreatedAtRoute("GetAuthor", new { authorId = authorDto.Id }, authorDto);
+        }
+
+        [HttpOptions]
+        public IActionResult GetAuthorsOptions()
+        {
+            /*
+             * Gives more information for developer about methods what is allowed in this area
+             */
+            HttpContext.Response.Headers.Add("Allow", "GET, OPTIONS, HEAD, POST");
+            return Ok();
         }
     }
 }

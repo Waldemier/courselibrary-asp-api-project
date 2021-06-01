@@ -22,8 +22,9 @@ namespace CourseLibrary.API.Controllers
             this._repos = repos ?? throw new ArgumentNullException(nameof(repos));
             this._mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
-
-        [HttpGet("({ids})")]
+    
+        // Example: https://localhost:5001/api/authorcollections/(2ee49fe3-edf2-4f91-8409-3eb25ce6ca51,2aadd2df-7caf-45ab-9355-7f6332985a87)
+        [HttpGet("({ids})", Name = "GetAuthorsCollection")]
         public IActionResult GetAuthorsCollection(
             [FromRoute][ModelBinder(BinderType = typeof(ArrayModelBinder))] IEnumerable<Guid> ids
             )
@@ -47,13 +48,52 @@ namespace CourseLibrary.API.Controllers
         [HttpPost]
         public ActionResult<IEnumerable<AuthorDto>> CreateAuthorCollection(IEnumerable<AuthorForCreateDto> authorCreateDtos)
         {
+            /* Example data to post
+             * [
+                    {
+                        "firstName": "Atherton",
+                        "lastName": "Uldae",
+                        "dateOfBirthday": "1999-04-03",
+                        "mainCategory": "Rum",
+                        "courses": [
+                            {
+                                "Title": "Boxing",
+                                "Description": "The best gym ever"
+                            },
+                            {
+                                "Title": "Fitness",
+                                "Description": "The best gym ever"
+                            }
+                        ]
+                    },
+                    {
+                        "firstName": "Eva",
+                        "lastName": "Yneq",
+                        "dateOfBirthday": "1999-05-03",
+                        "mainCategory": "Rum",
+                        "courses": [
+                            {
+                                "Title": "Cafe",
+                                "Description": "The best cafe ever"
+                            },
+                            {
+                                "Title": "Books",
+                                "Description": "The best books ever"
+                            }
+                        ]
+                    }
+                ]
+             */
             var authorEntities = this._mapper.Map<IEnumerable<Author>>(authorCreateDtos);
             foreach (var author in authorEntities)
             {
                 this._repos.AddAuthor(author);
             }
             this._repos.Save();
-            return Ok();
+
+            var authorDtos = this._mapper.Map<IEnumerable<AuthorDto>>(authorEntities);
+            
+            return CreatedAtRoute("GetAuthorsCollection", new { ids = string.Join(",", authorDtos.Select(x => x.Id)) }, authorDtos);
         }
     }
 }

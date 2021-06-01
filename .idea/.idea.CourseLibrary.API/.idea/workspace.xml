@@ -2,21 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1f10379-bc92-46ce-a0f0-41b8ebcf5bb4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Controllers/AuthorCollectionsController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Helpers/ArrayModelBinder.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/AuthorForCreateDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Models/CourseForCreateDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ValidationAttributes/CourseTitleMustBeDifferentFromDescriptionAttribute.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CourseLibrary.API/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/AuthorCollectionsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthorCollectionsController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/AuthorsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/AuthorsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controllers/CoursesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/CoursesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Author.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Models/AuthorDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/AuthorDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profiles/AuthorProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Profiles/AuthorProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Profiles/CourseProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Profiles/CourseProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/CourseLibraryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/CourseLibraryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Helpers/ArrayModelBinder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Helpers/ArrayModelBinder.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Models/CourseForCreateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Models/CourseForCreateDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,12 +26,14 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/D4006996-CF58-484C-B082-DEF65267B386/1B/RequiredAttribute.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/DbContext/DbContext.cs" />
       <option value="$PROJECT_DIR$/DbContext/Context.cs" />
       <option value="$PROJECT_DIR$/Entities/Сщгкыуюсы.cs" />
-      <option value="$PROJECT_DIR$/Entities/Course.cs" />
       <option value="$PROJECT_DIR$/DbContext/CourseLibraryDbContext.cs" />
       <option value="$PROJECT_DIR$/Controllers/Courses.cs" />
       <option value="$PROJECT_DIR$/Helpers/HelperFunctions.cs" />
@@ -51,18 +44,21 @@
       <option value="$PROJECT_DIR$/Services/ICourseLibraryRepository.cs" />
       <option value="$PROJECT_DIR$/Services/CourseLibraryRepository.cs" />
       <option value="$PROJECT_DIR$/Profiles/AuthorProfile.cs" />
-      <option value="$PROJECT_DIR$/Models/CourseForCreateDto.cs" />
       <option value="$PROJECT_DIR$/Profiles/CourseProfile.cs" />
-      <option value="$PROJECT_DIR$/Startup.cs" />
       <option value="$PROJECT_DIR$/Program.cs" />
       <option value="$PROJECT_DIR$/Controllers/CoursesController.cs" />
       <option value="$PROJECT_DIR$/Controllers/AuthorsCollectionsController.cs" />
       <option value="$PROJECT_DIR$/Models/AuthorDto.cs" />
       <option value="$PROJECT_DIR$/Models/AuthorForCreateDto.cs" />
       <option value="$PROJECT_DIR$/Entities/Author.cs" />
-      <option value="$PROJECT_DIR$/Controllers/AuthorsController.cs" />
       <option value="$PROJECT_DIR$/Helpers/ArrayModelBinder.cs" />
       <option value="$PROJECT_DIR$/Controllers/AuthorCollectionsController.cs" />
+      <option value="$PROJECT_DIR$/Controllers/AuthorsController.cs" />
+      <option value="$PROJECT_DIR$/ValidateAttributes/CourseTitleMustBeDifferentFromDescriptionAttribute.cs" />
+      <option value="$PROJECT_DIR$/Entities/Course.cs" />
+      <option value="$PROJECT_DIR$/ValidationAttributes/CourseTitleMustBeDifferentFromDescriptionAttribute.cs" />
+      <option value="$PROJECT_DIR$/Models/CourseForCreateDto.cs" />
+      <option value="$PROJECT_DIR$/Startup.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sTVyB83lmFBA3MRwoAOt3vgtTF" />
@@ -138,7 +134,8 @@
       <workItem from="1621051879647" duration="258000" />
       <workItem from="1622363954445" duration="16108000" />
       <workItem from="1622421853781" duration="9475000" />
-      <workItem from="1622456178723" duration="6532000" />
+      <workItem from="1622456178723" duration="6934000" />
+      <workItem from="1622475112928" duration="12304000" />
     </task>
     <servers />
   </component>
@@ -170,10 +167,10 @@
           <line>56</line>
           <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorsController.cs" initialLine="57" containingFunctionPresentation="method 'CreateAuthor'">
             <startOffsets>
-              <option value="2801" />
+              <option value="2847" />
             </startOffsets>
             <endOffsets>
-              <option value="2862" />
+              <option value="2908" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="4" />
@@ -183,10 +180,10 @@
           <line>42</line>
           <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorsController.cs" initialLine="43" containingFunctionPresentation="method 'GetAuthor'">
             <startOffsets>
-              <option value="2151" />
+              <option value="2197" />
             </startOffsets>
             <endOffsets>
-              <option value="2202" />
+              <option value="2248" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="5" />
@@ -196,23 +193,23 @@
           <line>43</line>
           <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorsController.cs" initialLine="44" containingFunctionPresentation="method 'GetAuthor'">
             <startOffsets>
-              <option value="2215" />
+              <option value="2261" />
             </startOffsets>
             <endOffsets>
-              <option value="2240" />
+              <option value="2286" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Controllers/AuthorCollectionsController.cs</url>
-          <line>49</line>
+          <line>86</line>
           <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorCollectionsController.cs" initialLine="26" containingFunctionPresentation="method 'CreateAuthorCollection'">
             <startOffsets>
-              <option value="1635" />
+              <option value="3216" />
             </startOffsets>
             <endOffsets>
-              <option value="1712" />
+              <option value="3293" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="10" />
@@ -222,19 +219,137 @@
           <line>63</line>
           <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorsController.cs" initialLine="64" containingFunctionPresentation="method 'CreateAuthor'">
             <startOffsets>
-              <option value="3067" />
+              <option value="3113" />
             </startOffsets>
             <endOffsets>
-              <option value="3146" />
+              <option value="3192" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Controllers/AuthorCollectionsController.cs</url>
+          <line>31</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Controllers\AuthorCollectionsController.cs" initialLine="30" containingFunctionPresentation="method 'GetAuthorsCollection'">
+            <startOffsets>
+              <option value="1214" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1230" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Helpers/ArrayModelBinder.cs</url>
+          <line>18</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Helpers\ArrayModelBinder.cs" initialLine="18" containingFunctionPresentation="method 'BindModelAsync'">
+            <startOffsets>
+              <option value="545" />
+            </startOffsets>
+            <endOffsets>
+              <option value="596" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Helpers/ArrayModelBinder.cs</url>
+          <line>29</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Helpers\ArrayModelBinder.cs" initialLine="29" containingFunctionPresentation="method 'BindModelAsync'">
+            <startOffsets>
+              <option value="1144" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1181" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Helpers/ArrayModelBinder.cs</url>
+          <line>26</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Helpers\ArrayModelBinder.cs" initialLine="26" containingFunctionPresentation="method 'BindModelAsync'">
+            <startOffsets>
+              <option value="964" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1051" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Helpers/ArrayModelBinder.cs</url>
+          <line>20</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Helpers\ArrayModelBinder.cs" initialLine="20" containingFunctionPresentation="method 'BindModelAsync'">
+            <startOffsets>
+              <option value="627" />
+            </startOffsets>
+            <endOffsets>
+              <option value="679" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Helpers/ArrayModelBinder.cs</url>
+          <line>21</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\Helpers\ArrayModelBinder.cs" initialLine="21" containingFunctionPresentation="method 'BindModelAsync'">
+            <startOffsets>
+              <option value="696" />
+            </startOffsets>
+            <endOffsets>
+              <option value="722" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ValidationAttributes/CourseTitleMustBeDifferentFromDescriptionAttribute.cs</url>
+          <line>20</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\ValidationAttributes\CourseTitleMustBeDifferentFromDescriptionAttribute.cs" initialLine="20" containingFunctionPresentation="method 'IsValid'">
+            <startOffsets>
+              <option value="797" />
+            </startOffsets>
+            <endOffsets>
+              <option value="829" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ValidationAttributes/CourseTitleMustBeDifferentFromDescriptionAttribute.cs</url>
+          <line>12</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\ValidationAttributes\CourseTitleMustBeDifferentFromDescriptionAttribute.cs" initialLine="12" containingFunctionPresentation="method 'IsValid'">
+            <startOffsets>
+              <option value="445" />
+            </startOffsets>
+            <endOffsets>
+              <option value="511" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/ValidationAttributes/CourseTitleMustBeDifferentFromDescriptionAttribute.cs</url>
+          <line>14</line>
+          <properties documentPath="C:\Users\User\RiderProjects\CourseLibrary.API\ValidationAttributes\CourseTitleMustBeDifferentFromDescriptionAttribute.cs" initialLine="14" containingFunctionPresentation="method 'IsValid'">
+            <startOffsets>
+              <option value="529" />
+            </startOffsets>
+            <endOffsets>
+              <option value="568" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#CourseLibrary.API.Entities.Author" memberName="Courses" />
+        <PinnedItemInfo parentTag="Type#Microsoft.AspNetCore.Mvc.ModelBinding.ModelBindingContext" memberName="ModelType" />
       </pinned-members>
     </pin-to-top-manager>
   </component>
