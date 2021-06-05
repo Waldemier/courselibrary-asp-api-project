@@ -46,7 +46,7 @@ namespace CourseLibrary.API.Services
             {
                 throw new ArgumentNullException(nameof(courseId));
             }
-
+            
             return this._context.Courses.FirstOrDefault(c => c.AuthorId == authorId && c.Id == courseId);
         }
 
@@ -65,6 +65,9 @@ namespace CourseLibrary.API.Services
         public void UpdateCourse(Course course)
         {
             // no code in this implementation
+            
+            // Can work without this line. This is for example.
+            this._context.Courses.Update(course);
         }
 
         public void AddAuthor(Author author)

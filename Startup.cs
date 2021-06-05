@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Serialization;
 
 namespace CourseLibrary.API
 {
@@ -31,6 +32,11 @@ namespace CourseLibrary.API
                 // By default is false
                 setupAction.ReturnHttpNotAcceptable = true; // Adding supported the 406 http status if requested 'Accept' type unsupported or not indicated.
             })
+                .AddNewtonsoftJson(setupAction =>
+                {
+                    // For patch requests option
+                    setupAction.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
+                })
                 .AddXmlDataContractSerializerFormatters() // Adding support the xml format.
                 .ConfigureApiBehaviorOptions(setupAction => // Adding additional information for errors message
                 {
@@ -87,7 +93,8 @@ namespace CourseLibrary.API
 
             services.AddDbContext<CourseLibraryDbContext>(options => 
                 options.UseSqlServer(   
-        @"Server=WIN-OBDH18C5VTL;Database=CourseLibrary.API.DB;Trusted_Connection=True;") 
+                    //@"Server=WIN-OBDH18C5VTL;Database=CourseLibrary.API.DB;Trusted_Connection=True;"
+        @"Server=localhost,1433;User Id=sa;Password=Admin123!;Database=CourseLibrary.API.DB;") 
             );
             
             services.AddSwaggerGen(c =>
