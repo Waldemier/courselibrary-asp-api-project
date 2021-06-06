@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using AutoMapper;
 using CourseLibrary.API.Entities;
 using CourseLibrary.API.Models;
@@ -179,6 +177,27 @@ namespace CourseLibrary.API.Controllers
             return NoContent();
         }
 
+        [HttpDelete("{courseId:Guid}")]
+        public ActionResult DeleteCourseForAuthor(Guid courseId, Guid authorId)
+        {
+            if (!this._repos.AuthorExists(authorId))
+            {
+                return NotFound();
+            }
+
+            var courseEntity = this._repos.GetCourse(authorId, courseId);
+
+            if (courseEntity == null)
+            {
+                return NotFound();
+            }
+            
+            this._repos.DeleteCourse(courseEntity);
+            this._repos.Save();
+            
+            return NoContent();
+        }
+        
         // For adding addition content into errors configuring(object) response
         public override ActionResult ValidationProblem([ActionResultObjectValue] ModelStateDictionary modelStateDictionary)
         {
